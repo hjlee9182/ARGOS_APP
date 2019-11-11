@@ -1,7 +1,8 @@
 import React,{useState} from 'react';
-import {View,StyleSheet,TouchableOpacity} from 'react-native';
+import {View,StyleSheet} from 'react-native';
 import {Text,Input,Button} from 'react-native-elements';
 import Spacer from '../components/Spacer';
+import NavLink from '../components/NavLink';
 const SignupScreen = ({navigation}) =>{
     const [email,setEmail] = useState('');
     const [password,setPassword] = useState('');
@@ -29,12 +30,10 @@ const SignupScreen = ({navigation}) =>{
     <Spacer>
     <Button title="Sign up"/>
     </Spacer>
-    <TouchableOpacity 
-    onPress={()=>navigation.navigate('Signin')}>
-        <Spacer>
-    <Text style={styles.link}>Already have an account? Sign in instead</Text>
-        </Spacer>
-    </TouchableOpacity>
+    <NavLink
+    routeName="Signin"
+    text = "Already have an account Sign in instead!"
+    />
     </View>
     );
 };
@@ -51,9 +50,7 @@ const styles = StyleSheet.create({
     justifyContent:'center',
     marginBottom:250
     },
-    link:{
-        color:'blue'
-    }
+   
     
 });
 
