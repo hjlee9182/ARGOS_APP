@@ -13,8 +13,8 @@ import { createBottomTabNavigator } from 'react-navigation-tabs';
 
 const switchNavigator = createSwitchNavigator({
   loginFlow : createStackNavigator({
-    Signup:SignupScreen,
-    Signin: SigninScreen
+    Signin: SigninScreen,
+    Signup:SignupScreen
   }),
   mainFlow: createBottomTabNavigator({
     trackListFlow: createStackNavigator({
