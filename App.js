@@ -1,16 +1,15 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
-import AccountScreen from './src/screens/AccountScreen';
+import PersonalInformation from './src/screens/PersonalInformation';
 import SigninScreen from './src/screens/SigninScreen';
 import SignupScreen from './src/screens/SignupScreen';
-import TrackCreateScreen from './src/screens/TrackCreateScreen';
+import SeminarScreen from './src/screens/SeminarScreen';
 import TrackDetailScreen from './src/screens/TrackDetailScreen';
-import TrackListScreen from './src/screens/TrackListScreen';
+import BoardScreen from './src/screens/BoardScreen';
 import { createSwitchNavigator, createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
 import { createBottomTabNavigator } from 'react-navigation-tabs';
-
 
 const switchNavigator = createSwitchNavigator({
   loginFlow : createStackNavigator({
@@ -18,12 +17,12 @@ const switchNavigator = createSwitchNavigator({
     Signup:SignupScreen
   }),
   mainFlow: createBottomTabNavigator({
-    trackListFlow: createStackNavigator({
-      TrackList: TrackListScreen,
+    BoardScreen: createStackNavigator({
+      BoardScreen: BoardScreen,
       TrackDetail : TrackDetailScreen
     }),
-    TrackCreate : TrackCreateScreen,
-    Account:AccountScreen
+    SeminarScreen : SeminarScreen,
+    PersonalInformation:PersonalInformation
   })
 });
 
