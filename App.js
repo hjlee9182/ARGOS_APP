@@ -5,6 +5,7 @@ import PersonalInformation from './src/screens/PersonalInformation';
 import SigninScreen from './src/screens/SigninScreen';
 import SignupScreen from './src/screens/SignupScreen';
 import SeminarScreen from './src/screens/SeminarScreen';
+import PushAlarmScreen from './src/screens/PushAlarmScreen';
 import TrackDetailScreen from './src/screens/TrackDetailScreen';
 import BoardScreen from './src/screens/BoardScreen';
 import { createSwitchNavigator, createAppContainer } from 'react-navigation';
@@ -17,12 +18,13 @@ const switchNavigator = createSwitchNavigator({
     Signup:SignupScreen
   }),
   mainFlow: createBottomTabNavigator({
-    BoardScreen: createStackNavigator({
+    게시판: createStackNavigator({
       BoardScreen: BoardScreen,
       TrackDetail : TrackDetailScreen
     }),
-    SeminarScreen : SeminarScreen,
-    PersonalInformation:PersonalInformation
+    세미나 : SeminarScreen,
+    마이페이지:PersonalInformation,
+    푸시알람 : PushAlarmScreen
   })
 });
 
