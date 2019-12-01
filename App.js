@@ -7,6 +7,7 @@ import SeminarScreen from './src/screens/SeminarScreen';
 import PushAlarmScreen from './src/screens/PushAlarmScreen';
 import TrackDetailScreen from './src/screens/TrackDetailScreen';
 import BoardScreen from './src/screens/BoardScreen';
+import AuthLoadingScreen from './src/screens/AuthLoadingScreen';
 import { createSwitchNavigator, createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
 import { createBottomTabNavigator } from 'react-navigation-tabs';
@@ -36,11 +37,12 @@ const getTabBarIcon = (navigation, focused, tintColor) => {
   return <IconComponent name={iconName} size={25} color={tintColor} />;
 };
 
-const switchNavigator = createSwitchNavigator({
+const switchNavigator = createSwitchNavigator(
+  {
+    AuthLoading: AuthLoadingScreen,
   loginFlow : createStackNavigator({
     Signin: SigninScreen,
-    Signup:SignupScreen
-  }),
+    Signup:SignupScreen}),
   mainFlow: createBottomTabNavigator({
     게시판: createStackNavigator(
       {
@@ -58,9 +60,18 @@ const switchNavigator = createSwitchNavigator({
   {
     defaultNavigationOptions: ({ navigation }) => ({
       tabBarIcon: ({ focused, tintColor }) =>
-        getTabBarIcon(navigation, focused, tintColor),
-    }
-  )},
+        getTabBarIcon(navigation, focused, tintColor),})
+  },
+  {
+   initialRouteName: 'AuthLoading',
+ },
+
+
+
+
+
+
+
   )
 });
 
