@@ -15,7 +15,7 @@ app.get('/users', function (req, res) {
     connection.getConnection(function (err, connection) {
 
 
-    connection.query('SELECT * FROM SaBang.People_Info', function (error, results, fields) {
+    connection.query('SELECT * FROM People_Info', function (error, results, fields) {
 
       if (error) throw error;
 
