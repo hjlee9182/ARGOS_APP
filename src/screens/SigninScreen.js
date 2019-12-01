@@ -31,10 +31,10 @@ class LoginActiviti extends React.Component {
 }).then((response) => response.json())
       .then((responseJson) => {
         // If server response message same as Data Matched
+      console.log(responseJson);
        if(responseJson === 'Data Matched')
         {
             this._signInAsync();
-
         }
         else{
           Alert.alert(responseJson);
@@ -45,13 +45,12 @@ class LoginActiviti extends React.Component {
   }
  // 인증 정보 저장
  _signInAsync = async () => {
-   await AsyncStorage.setItem('userToken', "hi");
+   await AsyncStorage.setItem('userToken', this.state.UserEmail );
    this.props.navigation.navigate('mainFlow');
  };
  render() {
    return (
      <>
-
     <TextInput
       placeholder="Enter User Email"
       onChangeText={UserEmail => this.setState({UserEmail})}
@@ -72,11 +71,11 @@ class LoginActiviti extends React.Component {
      <Text style = {{fontSize:48}}>SigninScreen</Text>
      <Button
      title ="Go to Signup"
-     onPress={()=>navigation.navigate('Signup')}></Button>
+     onPress={()=>this.props.navigation.navigate('Signup')}></Button>
 
      <Button
      title ="Go to mainFlow"
-     onPress={()=>navigation.navigate('mainFlow')}></Button>
+     onPress={()=>this.props.navigation.navigate('mainFlow')}></Button>
      </>
    );
  }
