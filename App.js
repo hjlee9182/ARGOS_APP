@@ -11,6 +11,7 @@ import { createSwitchNavigator, createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
 import { createBottomTabNavigator } from 'react-navigation-tabs';
 import { Ionicons } from '@expo/vector-icons';
+import {BlogProvider} from './src/screens/context/BlogContext'
 
 
 const getTabBarIcon = (navigation, focused, tintColor) => {
@@ -55,4 +56,10 @@ const switchNavigator = createSwitchNavigator({
   )
 });
 
-export default createAppContainer(switchNavigator);
+//export default createAppContainer(switchNavigator);
+const App = createAppContainer(switchNavigator);
+export default()=>{
+  return (
+  <BlogProvider><App/></BlogProvider>);
+  
+}
