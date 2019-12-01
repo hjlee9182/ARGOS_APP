@@ -11,7 +11,10 @@ import { createSwitchNavigator, createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
 import { createBottomTabNavigator } from 'react-navigation-tabs';
 import { Ionicons } from '@expo/vector-icons';
-import {BlogProvider} from './src/screens/context/BlogContext'
+import {Provider} from './src/screens/context/BlogContext'
+import ShowScreen from './src/screens/context/showScreen'
+import CreateScreen from './src/screens/context/CreateScreen'
+import EditScreen from './src/screens/context/EditScreen'
 
 
 const getTabBarIcon = (navigation, focused, tintColor) => {
@@ -39,10 +42,15 @@ const switchNavigator = createSwitchNavigator({
     Signup:SignupScreen
   }),
   mainFlow: createBottomTabNavigator({
-    게시판: createStackNavigator({
-      BoardScreen: BoardScreen,
-      TrackDetail : TrackDetailScreen
-    }),
+    게시판: createStackNavigator(
+      {
+        BoardScreen: BoardScreen,
+      TrackDetail : TrackDetailScreen,
+      Show : ShowScreen,
+      Create :CreateScreen,
+      Edit:EditScreen
+      },
+    ),
     세미나 : SeminarScreen,
     마이페이지:PersonalInformation,
     푸시알람 : PushAlarmScreen
@@ -60,6 +68,6 @@ const switchNavigator = createSwitchNavigator({
 const App = createAppContainer(switchNavigator);
 export default()=>{
   return (
-  <BlogProvider><App/></BlogProvider>);
+  <Provider><App/></Provider>);
   
 }
