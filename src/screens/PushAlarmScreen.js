@@ -57,4 +57,23 @@ const PushAlarmScreen = () =>{
     
     return (
 
-    <Text style = {{fontSize:48}}>PushAlarmScreen</Text>
+    <Text style = {{fontSize:48}}>PushAlarmScreen</Text>);
+}
+
+PushAlarmScreen.navigationOptions = ({navigation}) =>{
+    
+
+    return {
+        headerRight: (
+        <TouchableOpacity 
+        onPress={()=>
+            b = new admincheck(navigation)}>
+            <EvilIcons name="bell" size={35}/>
+        </TouchableOpacity>),
+        title: "푸시 알람"
+    };
+};
+
+
+
+export default PushAlarmScreen; 

@@ -1,3 +1,4 @@
+import React from 'react';
 import {View,StyleSheet,Text,TextInput} from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import {EvilIcons} from '@expo/vector-icons'
@@ -88,18 +89,3 @@ export default class sendpushmessage extends React.Component {
 
 const styles = StyleSheet.create({
 });
-
-sendpushmessage.navigationOptions = ({navigation}) =>{
-    
-
-    return {
-        headerRight: (
-        <TouchableOpacity 
-        onPress={()=>
-            b = new admincheck(navigation)}>
-            <EvilIcons name="bell" size={35}/>
-        </TouchableOpacity>),
-        title: "푸시 알람"
-    };
-};
-//export default PushAlarmScreen;
