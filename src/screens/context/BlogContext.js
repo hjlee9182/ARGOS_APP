@@ -8,6 +8,10 @@ const BlogContext = React.createContext();
 const blogReducer = (state,action)=>{
     console.log(action.type)
     switch (action.type){
+        case 'delete_freepost':
+            return state.filter((blogPost)=>blogPost.id!==action.payload);
+        case 'get_freeposts':
+            return action.payload;
         case 'get_blogposts':
             return action.payload;
         case 'delete_blogpost':
@@ -54,11 +58,31 @@ const editBlogPost = dispatch=>{
     }
 }
 }
+const getfreePosts = dispatch =>{
+   
+    return async () =>{
+        const response = await jsonServer.get('/free')
+        dispatch({type:'get_freeposts',payload: response.data})
+    }
+}
 
-
+const addfreePost = dispatch=>{
+    return async (title,content,callback)=>{
+    await jsonServer.post('/free',{title,content});
+        if (callback){
+        callback()
+    }
+    }
+};
+const deletefreePost = dispatch=>{
+    return async id=>{
+        await jsonServer.delete(`/free/${id}`)
+        dispatch({type: 'delete_freepost',payload : id})
+    }
+}
 export const {Context, Provider} = createDataContext(
     blogReducer,
-    {addBlogPost,deleteBlogPost,editBlogPost,getBlogPosts},
+    {addBlogPost,deleteBlogPost,editBlogPost,getBlogPosts,getfreePosts,addfreePost,deletefreePost},
     []
 
 );

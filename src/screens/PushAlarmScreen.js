@@ -70,6 +70,7 @@ export default class PushAlarmScreen extends React.Component {
           value={this.state.messageText}
           onChangeText={this.handleChangeText}
           style={styles.textInput}
+          
         />
         <TouchableOpacity
           style={styles.button}

@@ -1,7 +1,11 @@
-import React from 'react';
-import {View,StyleSheet,Text,Button, TextInput, Alert} from 'react-native';
+import * as React from 'react';
+import {View,StyleSheet,Text,Button, Input,TextInput, Alert,TouchableOpacity} from 'react-native';
 import { AsyncStorage } from 'react-native';
+import Spacer from '../components/Spacer';
+import NavLink from '../components/NavLink';
 
+const BLUE = "#428aF8";
+const LIGHT_GRAY = "#D3D3D3";
 class LoginActiviti extends React.Component {
 
   constructor(props) {
@@ -50,37 +54,65 @@ class LoginActiviti extends React.Component {
  };
  render() {
    return (
-     <>
+     <View style = {styles.container}>
+       <Spacer>
+       <Text style={{fontSize:50,textAlign:"center"}}>ARGOS</Text>
+       </Spacer>
+       
+       <Spacer>
     <TextInput
-      placeholder="Enter User Email"
+      label="Id"
+      placeholder="Enter User ID"
       onChangeText={UserEmail => this.setState({UserEmail})}
       underlineColorAndroid='transparent'
-      style={styles.TextInputStyleClass}
     />
+    </Spacer>
+    <Spacer>
     <TextInput
+    label="Password"
       placeholder="Enter User Password"
       onChangeText={UserPassword => this.setState({UserPassword})}
-      underlineColorAndroid='transparent'
-      style={styles.TextInputStyleClass}
       secureTextEntry={true}
-    />
-    <Button title="Click Here To Login" onPress={
-        this.UserLoginFunction
-    } color="#2196F3" />
-
-     <Text style = {{fontSize:48}}>SigninScreen</Text>
+      underlineColorAndroid="transparent"
+    /></Spacer>
+    <Spacer>
+    <View >
+        <TouchableOpacity 
+        style={{
+        }}
+        onPress={this.UserLoginFunction}>
+          <Text style={styles.bt}>Login!</Text>
+        </TouchableOpacity>
+      </View>
+    </Spacer>
      <Button
      title ="Go to Signup"
      onPress={()=>this.props.navigation.navigate('Signup')}></Button>
-
-     <Button
-     title ="Go to mainFlow"
-     onPress={()=>this.props.navigation.navigate('mainFlow')}></Button>
-     </>
+    
+     </View>
    );
  }
 
 }
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  container:{
+    flex:1,
+    justifyContent:'center',
+    marginBottom:250
+    },
+   bt:{
+    backgroundColor: 'navy',
+    borderColor: 'white',
+    borderWidth: 1,
+    borderRadius: 12,
+    color: 'white',
+    fontSize: 15,
+    fontWeight: 'bold',
+    overflow: 'hidden',
+    padding: 12,
+    textAlign:'center',
+    
+   }
+});
 
 export default LoginActiviti;
