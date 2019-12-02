@@ -57,6 +57,17 @@ const SeminarScreen = () =>{
     },
   ];
 
+  /*a = () => {
+    fetch('http://112.166.141.161/pdf/a.pdf', {
+
+
+    }
+    
+
+
+  }*/
+
+
   keyExtractor = (item, index) => index.toString()
 
   getSeminarFile = () => {

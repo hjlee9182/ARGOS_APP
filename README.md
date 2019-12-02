@@ -1,5 +1,7 @@
 # ARGOS_APP
 
+https://github.com/hjlee9182/argos_app_server <= 실행전 에 필요한 서버파일
+
 11/11
 1. Signup,Signin 페이지를 만드는데 여기서는 component(class라고 생각하면 편할듯)를 따로만듬, 근데 그게 데이터랑 관련있어서 안건듬 ( 재민이가 백엔드 하면서 같이 건들어야될듯)
 2. Signin 페이지에서 mainFLow로 갈수있게 임시로 버튼 만듬
@@ -15,3 +17,6 @@
 11/26
 1. 각 페이지 이름 리네임함
 2. 밑에 bottomNavigation 아이콘 및 이름 수정
+
+12/3 
+
