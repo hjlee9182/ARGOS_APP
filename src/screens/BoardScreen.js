@@ -5,11 +5,11 @@ const BoardScreen = ({navigation}) =>{
     return <>
     <Text style = {{fontSize:48}}>BoardScreen</Text>
     <Button 
-    title ="Go to Track Detail"
-    onPress={()=>navigation.navigate('TrackDetail')}></Button>
+    title ="공지사항"
+    onPress={()=>navigation.navigate('Notice',{site:"notice"})}></Button>
      <Button 
-    title ="Go to free"
-    onPress={()=>navigation.navigate('freeboard')}></Button>
+    title ="자유게시판"
+    onPress={()=>navigation.navigate('freeboard',{site:"free"})}></Button>
     </>
 };
 

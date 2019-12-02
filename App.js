@@ -5,7 +5,7 @@ import SigninScreen from './src/screens/SigninScreen';
 import SignupScreen from './src/screens/SignupScreen';
 import SeminarScreen from './src/screens/SeminarScreen';
 import PushAlarmScreen from './src/screens/PushAlarmScreen';
-import TrackDetailScreen from './src/screens/TrackDetailScreen';
+import Notice from './src/screens/boarder/Notice';
 import BoardScreen from './src/screens/BoardScreen';
 import AuthLoadingScreen from './src/screens/AuthLoadingScreen';
 import { createSwitchNavigator, createAppContainer } from 'react-navigation';
@@ -13,10 +13,11 @@ import { createStackNavigator } from 'react-navigation-stack';
 import { createBottomTabNavigator } from 'react-navigation-tabs';
 import { Ionicons } from '@expo/vector-icons';
 import {Provider} from './src/screens/context/BlogContext'
+
 import ShowScreen from './src/screens/context/showScreen'
 import CreateScreen from './src/screens/context/CreateScreen'
 import EditScreen from './src/screens/context/EditScreen'
-import freeboard from './src/screens/freeboard'
+import freeboard from './src/screens/boarder/freeboard'
 import findperson from './src/screens/Findperson'
 import sendpushmessage from './src/screens/sendpushmessage'
 
@@ -48,7 +49,7 @@ const switchNavigator = createSwitchNavigator(
   mainFlow: createBottomTabNavigator({
     게시판: createStackNavigator({
       BoardScreen: BoardScreen,
-      TrackDetail : TrackDetailScreen,
+      Notice : Notice,
         Show : ShowScreen,
         Create :CreateScreen,
         Edit:EditScreen,
@@ -73,14 +74,6 @@ const switchNavigator = createSwitchNavigator(
   {
    initialRouteName: 'AuthLoading',
  },
-    {
-      test: createStackNavigator({
-        TrackDetail : TrackDetailScreen,
-        Show : ShowScreen,
-        Create :CreateScreen,
-        Edit:EditScreen
-        
-    })}
 
   )
 });

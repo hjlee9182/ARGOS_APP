@@ -1,10 +1,10 @@
 import React, { useContext ,useEffect} from 'react';
 import {View,StyleSheet,Text,FlatList,Button} from 'react-native';
-import {Context} from './context/BlogContext'
+import {Context} from '../context/BlogContext'
 import {Feather } from '@expo/vector-icons'
 import { TouchableOpacity } from 'react-native-gesture-handler';
 
-const TrackDetailSCreen = ({navigation}) =>{
+const Notice = ({navigation}) =>{
     const {state,deleteBlogPost,getBlogPosts} = useContext(Context);
     
     useEffect(()=>{
@@ -65,7 +65,7 @@ const TrackDetailSCreen = ({navigation}) =>{
     </View>)
     };
 
-TrackDetailSCreen.navigationOptions = ({navigation}) =>{
+    Notice.navigationOptions = ({navigation}) =>{
     return {
         headerleft: 
         (<TouchableOpacity onPress={()=>navigation.navigate('BoardScreen')}>
@@ -97,4 +97,4 @@ const styles = StyleSheet.create({
     }
 });
 
-export default TrackDetailSCreen;
+export default Notice;

@@ -6,6 +6,7 @@ import jsonServer from '../../api/jsonServer'
 const BlogContext = React.createContext();
 
 const blogReducer = (state,action)=>{
+    console.log(action.type)
     switch (action.type){
         case 'get_blogposts':
             return action.payload;
@@ -22,6 +23,7 @@ const blogReducer = (state,action)=>{
 };
 
 const getBlogPosts = dispatch =>{
+   
     return async () =>{
         const response = await jsonServer.get('/blogposts')
         dispatch({type:'get_blogposts',payload: response.data})
@@ -34,22 +36,12 @@ const addBlogPost = dispatch=>{
         callback()
     }
     }
-
-//     return (title,content,callback) =>{
-//     dispatch({type: 'add_blogpost',payload:{title,content} })
-//         if(callback){
-//             callback();
-//         }
-// }
 };
 const deleteBlogPost = dispatch=>{
     return async id=>{
         await jsonServer.delete(`/blogposts/${id}`)
         dispatch({type: 'delete_blogpost',payload : id})
     }
-    
-     
-   
 }
 const editBlogPost = dispatch=>{
     return async (id,title,content,callback) =>{

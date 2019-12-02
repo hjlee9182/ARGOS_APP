@@ -1,6 +1,6 @@
 import React, { useContext ,useEffect} from 'react';
 import {View,StyleSheet,Text,FlatList,Button} from 'react-native';
-import {Context} from './context/BlogContext'
+import {Context} from '../context/createDataContext'
 import {Feather } from '@expo/vector-icons'
 import { TouchableOpacity } from 'react-native-gesture-handler';
 
@@ -72,7 +72,7 @@ const freeboard = ({navigation}) =>{
         (<TouchableOpacity onPress={()=>navigation.navigate('Create')}>
         <Feather name="plus" size={30}/>
         </TouchableOpacity>),
-        title: "test"
+        title: "자유게시판"
     };
 }
 
