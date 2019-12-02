@@ -31,7 +31,6 @@ class LoginActiviti extends React.Component {
 }).then((response) => response.json())
       .then((responseJson) => {
         // If server response message same as Data Matched
-      console.log(responseJson);
        if(responseJson === 'Data Matched')
         {
             this._signInAsync();

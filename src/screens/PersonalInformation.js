@@ -15,8 +15,12 @@ class PersonalInformation extends React.Component{
     super(props);
     this.state = {
       text: '',
+      name: '',
       id: '',
-      email: ''
+      email: '',
+      join: '',
+      admission: '',
+
     };
     this.a();
     }
@@ -43,8 +47,12 @@ class PersonalInformation extends React.Component{
      }).then((response) => response.json())
            .then((responseJson) => {
              // If server response message same as Data Matched
-              this.setState({ id : responseJson[0] });
-              this.setState({ email : responseJson[1] });
+              console.log(responseJson);
+              this.setState({ name : responseJson[0] });
+              this.setState({ id : responseJson[1] });
+              this.setState({ email : responseJson[2] });
+              this.setState({ join : responseJson[4] });
+              this.setState({ admission : responseJson[5] });
 
            }).catch((error) => {
              console.error(error);
@@ -57,13 +65,16 @@ class PersonalInformation extends React.Component{
       <View stlye={    
       {justifyContent: 'center',
       alignItems: 'center',
-      flexDirection: 'row',}}>
+      }}>
       <Image 
       style = {styles.image_style}
       source = {require('../../assets/icon.png')}/>
       </View>
+      <Text style = {{fontSize:24}}>name : { this.state.name }</Text>
       <Text style = {{fontSize:24}}>id : { this.state.id }</Text>
       <Text style = {{fontSize:24}}>email : { this.state.email }</Text>
+      <Text style = {{fontSize:24}}>Join_us : { this.state.join }</Text>
+      <Text style = {{fontSize:24}}>admission : { this.state.admission }</Text>
       <Button title="logout" onPress={ async ()=>{
         await  AsyncStorage.removeItem('userToken');
         this.props.navigation.navigate('Signin')
