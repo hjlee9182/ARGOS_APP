@@ -15,6 +15,8 @@ const BlogPostForm = ({onSubmit,initialValues}) =>{
         <Text 
         style={styles.label}>Enter Content:</Text>
         <TextInput 
+        multiline
+        onChangeText={text=>onChangeText(text)}
         style = {styles.input_content}
         value={content} onChangeText={text =>setContent(text)} />
         <Button 

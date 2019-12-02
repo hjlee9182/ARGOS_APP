@@ -7,6 +7,9 @@ const BoardScreen = ({navigation}) =>{
     <Button 
     title ="Go to Track Detail"
     onPress={()=>navigation.navigate('TrackDetail')}></Button>
+     <Button 
+    title ="Go to free"
+    onPress={()=>navigation.navigate('freeboard')}></Button>
     </>
 };
 

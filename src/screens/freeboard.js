@@ -4,7 +4,7 @@ import {Context} from './context/BlogContext'
 import {Feather } from '@expo/vector-icons'
 import { TouchableOpacity } from 'react-native-gesture-handler';
 
-const TrackDetailSCreen = ({navigation}) =>{
+const freeboard = ({navigation}) =>{
     const {state,deleteBlogPost,getBlogPosts} = useContext(Context);
     
     useEffect(()=>{
@@ -65,17 +65,14 @@ const TrackDetailSCreen = ({navigation}) =>{
     </View>)
     };
 
-TrackDetailSCreen.navigationOptions = ({navigation}) =>{
+    freeboard.navigationOptions = ({navigation}) =>{
     return {
-        headerleft: 
-        (<TouchableOpacity onPress={()=>navigation.navigate('BoardScreen')}>
-        <Feather name="plus" size={30}/>
-        </TouchableOpacity>),
+
         headerRight: 
         (<TouchableOpacity onPress={()=>navigation.navigate('Create')}>
         <Feather name="plus" size={30}/>
         </TouchableOpacity>),
-        title: "공지사항"
+        title: "test"
     };
 }
 
@@ -97,4 +94,4 @@ const styles = StyleSheet.create({
     }
 });
 
-export default TrackDetailSCreen;
+export default freeboard;

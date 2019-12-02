@@ -1,15 +1,26 @@
 import React from 'react';
 import {View,StyleSheet,Text} from 'react-native';
-import {SafeAreaView} from 'react-navigation';
+import { TouchableOpacity } from 'react-native-gesture-handler';
+import {EvilIcons} from '@expo/vector-icons'
+
 const PushAlarmScreen = () =>{
     return (
-    <SafeAreaView forceInset={{top:'always'}}>
     <Text style = {{fontSize:48}}>PushAlarmScreen</Text>
-    </SafeAreaView>
     );
 };
 
 const styles = StyleSheet.create({
 });
 
+PushAlarmScreen.navigationOptions = ({navigation}) =>{
+    return {
+        headerRight: (
+        <TouchableOpacity 
+        onPress={()=>
+        navigation.navigate('sendpushmessage')}>
+            <EvilIcons name="bell" size={35}/>
+        </TouchableOpacity>),
+        title: "푸시 알람"
+    };
+};
 export default PushAlarmScreen;

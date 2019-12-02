@@ -1,8 +1,11 @@
 import React from 'react';
 
-import {View,StyleSheet,Text,Button,Alert} from 'react-native';
+import {View,StyleSheet,Text,Button,Alert,Image} from 'react-native';
 import {SafeAreaView} from 'react-navigation';
 import { AsyncStorage } from 'react-native';
+import { TouchableOpacity } from 'react-native-gesture-handler';
+import {EvilIcons} from '@expo/vector-icons'
+import { stopLocationUpdatesAsync } from 'expo-location';
 
 
 class PersonalInformation extends React.Component{
@@ -50,21 +53,47 @@ class PersonalInformation extends React.Component{
 
 
   render() {
-    return (
-      <SafeAreaView forceInset={{top:'always'}}>
-      <Text style = {{fontSize:48}}>PersonalInformation</Text>
+    return (<>
+      <View stlye={    
+      {justifyContent: 'center',
+      alignItems: 'center',
+      flexDirection: 'row',}}>
+      <Image 
+      style = {styles.image_style}
+      source = {require('../../assets/icon.png')}/>
+      </View>
       <Text style = {{fontSize:24}}>id : { this.state.id }</Text>
       <Text style = {{fontSize:24}}>email : { this.state.email }</Text>
       <Button title="logout" onPress={ async ()=>{
         await  AsyncStorage.removeItem('userToken');
         this.props.navigation.navigate('Signin')
-      }}/>
-      </SafeAreaView>
+      }}/></>
+      
     );
   }
 
 }
 const styles = StyleSheet.create({
+  image_style :{
+    height : 150 ,
+    width : 150,
+    marginTop : 50,
+    justifyContent: 'center',
+      alignItems: 'center',
+      flexDirection: 'row',
+  }
 });
+
+PersonalInformation.navigationOptions = ({navigation}) =>{
+  return {
+      headerRight: (
+      <TouchableOpacity 
+      onPress={()=>
+      navigation.navigate('findperson')}>
+          <EvilIcons name="search" size={35}/>
+      </TouchableOpacity>),
+      title: "마이 페이지"
+  };
+};
 
 export default PersonalInformation;

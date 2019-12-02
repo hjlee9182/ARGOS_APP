@@ -16,7 +16,9 @@ import {Provider} from './src/screens/context/BlogContext'
 import ShowScreen from './src/screens/context/showScreen'
 import CreateScreen from './src/screens/context/CreateScreen'
 import EditScreen from './src/screens/context/EditScreen'
-
+import freeboard from './src/screens/freeboard'
+import findperson from './src/screens/Findperson'
+import sendpushmessage from './src/screens/sendpushmessage'
 
 const getTabBarIcon = (navigation, focused, tintColor) => {
   const { routeName } = navigation.state;
@@ -44,15 +46,64 @@ const switchNavigator = createSwitchNavigator(
     Signin: SigninScreen,
     Signup:SignupScreen}),
   mainFlow: createBottomTabNavigator({
-    게시판: createStackNavigator(
-      {
-        BoardScreen: BoardScreen,
+    게시판: createStackNavigator({
+      BoardScreen: BoardScreen,
       TrackDetail : TrackDetailScreen,
-      Show : ShowScreen,
-      Create :CreateScreen,
-      Edit:EditScreen
-      },
+        Show : ShowScreen,
+        Create :CreateScreen,
+        Edit:EditScreen,
+        freeboard : freeboard
+    },
     ),
+    세미나 : SeminarScreen,
+    마이페이지: createStackNavigator({
+      PersonalInformation : PersonalInformation,
+      findperson : findperson
+    }),
+    푸시알람 : createStackNavigator({
+      Push : PushAlarmScreen,
+      sendpushmessage : sendpushmessage
+    })
+  },
+  {
+    defaultNavigationOptions: ({ navigation }) => ({
+      tabBarIcon: ({ focused, tintColor }) =>
+        getTabBarIcon(navigation, focused, tintColor),})
+  },
+  {
+   initialRouteName: 'AuthLoading',
+ },
+    {
+      test: createStackNavigator({
+        TrackDetail : TrackDetailScreen,
+        Show : ShowScreen,
+        Create :CreateScreen,
+        Edit:EditScreen
+        
+    })}
+
+  )
+});
+
+/*
+const switchNavigator = createSwitchNavigator(
+  {
+    AuthLoading: AuthLoadingScreen,
+  loginFlow : createStackNavigator({
+    Signin: SigninScreen,
+    Signup:SignupScreen}),
+  mainFlow: createBottomTabNavigator({
+    게시판: createStackNavigator({
+      BoardScreen: BoardScreen,
+      TrackDetail : TrackDetailScreen,
+        Show : ShowScreen,
+        Create :CreateScreen,
+        Edit:EditScreen
+    },
+    {
+      BoardScreen: BoardScreen,
+      freeboard : freeboard
+    }),
     세미나 : SeminarScreen,
     마이페이지:PersonalInformation,
     푸시알람 : PushAlarmScreen
@@ -65,16 +116,18 @@ const switchNavigator = createSwitchNavigator(
   {
    initialRouteName: 'AuthLoading',
  },
-
-
-
-
-
-
+    {
+      test: createStackNavigator({
+        TrackDetail : TrackDetailScreen,
+        Show : ShowScreen,
+        Create :CreateScreen,
+        Edit:EditScreen
+        
+    })}
 
   )
 });
-
+*/
 //export default createAppContainer(switchNavigator);
 const App = createAppContainer(switchNavigator);
 export default()=>{
