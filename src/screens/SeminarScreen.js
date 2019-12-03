@@ -2,8 +2,9 @@ import React from 'react';
 import { StyleSheet, FlatList } from 'react-native';
 import { ListItem } from 'react-native-elements'
 import { SafeAreaView } from 'react-navigation';
+import * as WebBrowser from 'expo-web-browser';
 
-const SeminarScreen = () =>{
+const SeminarScreen = ({navigation}) => {
   const list = [
     {
       name: 'PoC 2019 후기',
@@ -57,21 +58,10 @@ const SeminarScreen = () =>{
     },
   ];
 
-  /*a = () => {
-    fetch('http://112.166.141.161/pdf/a.pdf', {
-
-
-    }
-    
-
-
-  }*/
-
-
   keyExtractor = (item, index) => index.toString()
 
   getSeminarFile = () => {
-    console.log('item pushed');
+    let result = WebBrowser.openBrowserAsync('http://112.166.141.161/pdf/a.pdf');
   };
 
   renderItem = ({item}) => (
