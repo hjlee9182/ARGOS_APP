@@ -1,5 +1,5 @@
 import React from 'react';
-import {View,StyleSheet,Text,Alert} from 'react-native';
+import {View,StyleSheet,Text,Alert,FlatList} from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import {EvilIcons} from '@expo/vector-icons'
 import { AsyncStorage } from 'react-native';
@@ -25,7 +25,6 @@ class admincheck extends React.Component{
       }
   
       abc(navigation){
-          console.log("isrun?")
         const { text }  = this.state.text ;
         fetch('http://112.166.141.161/react_admin_check.php', {
   
@@ -49,20 +48,75 @@ class admincheck extends React.Component{
                console.error(error);
              });
     }
-  
   }
 
 
-const PushAlarmScreen = () =>{
-    
-    return (
+export default class PushAlarmScreen extends React.Component{ 
 
-    <Text style = {{fontSize:48}}>PushAlarmScreen</Text>);
+  constructor(props,navigation) {
+    super(props);
+    this.state = {
+      notification: null,
+      messageText: '',
+      data: '',
+      abcd: '',
+      isloding: true
+    };
+    this.getmsg();
+    
+    }
+
+  getmsg(){
+    console.log("hh");
+    fetch('http://112.166.141.161/react_pushget.php', {
+
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        text : 'hi'
+     })
+   }).then((response) => response.json())
+         .then((responseJson) => {
+            this.state.data = "";
+            this.setState({
+              data : responseJson[0]
+            })
+            
+
+         }).catch((error) => {
+           console.error(error);
+         });
+  }
+
+  renderRow = ({item}) => {
+    return(
+      <View>
+        <Text> {item.who} {item.message}  {item.time} </Text>
+      </View>
+    )
+  }
+
+  render(){
+   //this.getmsg();
+    return(
+      <>
+      <Text style = {{fontSize:48}}>PushAlarmScreen</Text>
+      <FlatList
+      data={ this.state.data }
+      renderItem={this.renderRow}
+      keyExtractor={(item,index)=>index.toString()}
+      />
+      </>
+    );
+  }
 }
 
 PushAlarmScreen.navigationOptions = ({navigation}) =>{
     
-
+    
     return {
         headerRight: (
         <TouchableOpacity 
@@ -76,4 +130,3 @@ PushAlarmScreen.navigationOptions = ({navigation}) =>{
 
 
 
-export default PushAlarmScreen; 

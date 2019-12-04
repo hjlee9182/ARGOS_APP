@@ -33,7 +33,7 @@ class LoginActiviti extends React.Component {
         // If server response message same as Data Matched
        if(responseJson === 'Data Matched')
         {
-            this._signInAsync();
+            console.log("hi~~")
         }
         else{
           Alert.alert(responseJson);
@@ -42,11 +42,7 @@ class LoginActiviti extends React.Component {
         console.error(error);
       });
   }
- // 인증 정보 저장
- _signInAsync = async () => {
-   await AsyncStorage.setItem('userToken', this.state.UserEmail );
-   this.props.navigation.navigate('mainFlow');
- };
+ 
  render() {
    return (
      <>
