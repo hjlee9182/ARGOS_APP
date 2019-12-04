@@ -106,7 +106,7 @@ const styles = StyleSheet.create({
     borderRadius: 12,
     color: 'white',
     fontSize: 15,
-    fontWeight: 'bold',
+    fontWeight: "800",
     overflow: 'hidden',
     padding: 12,
     textAlign:'center',
