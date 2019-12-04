@@ -1,17 +1,17 @@
 import React, { useContext ,useEffect} from 'react';
 import {View,StyleSheet,Text,FlatList,Button} from 'react-native';
-import {Context} from '../context/createDataContext'
+import {Context} from '../context/BlogContext'
 import {Feather } from '@expo/vector-icons'
 import { TouchableOpacity } from 'react-native-gesture-handler';
 
 const freeboard = ({navigation}) =>{
-    const {state,deleteBlogPost,getBlogPosts} = useContext(Context);
+    const {state,deletefreePost,getfreePosts} = useContext(Context);
     
     useEffect(()=>{
-        getBlogPosts();
+        getfreePosts();
 
        const listener =  navigation.addListener('didFocus',()=>{
-            getBlogPosts();
+        getfreePosts();
         });
 
         return ()=>{
@@ -41,7 +41,7 @@ const freeboard = ({navigation}) =>{
             </TouchableOpacity>
             <TouchableOpacity  onPress={()=>{
                     if(!this.preventDefault){
-                    deleteBlogPost(item.id)}}}>
+                        deletefreePost(item.id)}}}>
                 <Feather size={30} name = "trash"/>
                 </TouchableOpacity>
             </View>
@@ -69,7 +69,7 @@ const freeboard = ({navigation}) =>{
     return {
 
         headerRight: 
-        (<TouchableOpacity onPress={()=>navigation.navigate('Create')}>
+        (<TouchableOpacity onPress={()=>navigation.navigate('createfree')}>
         <Feather name="plus" size={30}/>
         </TouchableOpacity>),
         title: "자유게시판"

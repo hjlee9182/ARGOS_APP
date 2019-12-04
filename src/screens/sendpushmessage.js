@@ -57,6 +57,7 @@ class msg extends React.Component{
 const PUSH_REGISTRATION_ENDPOINT = 'http://8aeb71bd.ngrok.io/token';
 const MESSAGE_ENPOINT = 'http://8aeb71bd.ngrok.io/message';
 
+
 export default class sendpushmessage extends React.Component {
   
     constructor(props,navigation) {

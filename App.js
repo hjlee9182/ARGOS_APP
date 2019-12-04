@@ -13,14 +13,13 @@ import { createStackNavigator } from 'react-navigation-stack';
 import { createBottomTabNavigator } from 'react-navigation-tabs';
 import { Ionicons } from '@expo/vector-icons';
 import {Provider} from './src/screens/context/BlogContext'
-
 import ShowScreen from './src/screens/context/showScreen'
 import CreateScreen from './src/screens/context/CreateScreen'
 import EditScreen from './src/screens/context/EditScreen'
 import freeboard from './src/screens/boarder/freeboard'
 import findperson from './src/screens/Findperson'
 import sendpushmessage from './src/screens/sendpushmessage'
-
+import createfree from './src/screens/boarder/createfree'
 const getTabBarIcon = (navigation, focused, tintColor) => {
   const { routeName } = navigation.state;
   let IconComponent = Ionicons;
@@ -53,7 +52,8 @@ const switchNavigator = createSwitchNavigator(
         Show : ShowScreen,
         Create :CreateScreen,
         Edit:EditScreen,
-        freeboard : freeboard
+        freeboard : freeboard,
+        createfree : createfree
     },
     ),
     세미나 : SeminarScreen,
