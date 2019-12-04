@@ -6,8 +6,8 @@ import { Notifications } from 'expo';
 import * as Permissions from 'expo-permissions';
 
 
-const PUSH_REGISTRATION_ENDPOINT = 'http://8aeb71bd.ngrok.io/token';
-const MESSAGE_ENPOINT = 'http://8aeb71bd.ngrok.io/message';
+const PUSH_REGISTRATION_ENDPOINT = 'http://03c48463.ngrok.io/token';
+const MESSAGE_ENPOINT = 'http://03c48463.ngrok.io/message';
 
 export default class sendpushmessage extends React.Component {
     state = {
