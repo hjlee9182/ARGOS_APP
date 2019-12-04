@@ -54,8 +54,8 @@ class msg extends React.Component{
            });
   }
 }
-const PUSH_REGISTRATION_ENDPOINT = 'http://8aeb71bd.ngrok.io/token';
-const MESSAGE_ENPOINT = 'http://8aeb71bd.ngrok.io/message';
+const PUSH_REGISTRATION_ENDPOINT = 'http://7d355895.ngrok.io/token';
+const MESSAGE_ENPOINT = 'http://7d355895.ngrok.io/message';
 
 
 export default class sendpushmessage extends React.Component {
@@ -124,26 +124,28 @@ export default class sendpushmessage extends React.Component {
     
   }
 
-  renderRow = ({item}) => {
-    return(
-      <View>
-        <Text> {item.who} {item.message}  {item.time} </Text>
-      </View>
-    )
-  }
   render() {
        return (
       <View style={styles.container}>
+        <View style={{borderWidth :1, width : "70%",
+        marginBottom : 10, marginTop : 50
+  }}>
         <TextInput
+        placeholder="Enter send message"
           value={this.state.messageText}
           onChangeText={this.handleChangeText}
-          style={styles.textInput}
+          style={{
+            textAlign : "center",
+            backgroundColor: '#ffffff',
+            paddingLeft: 15,
+            paddingRight: 15}}
         />
+        </View>
         <TouchableOpacity
           style={styles.button}
           onPress={this.sendMessage}
         >
-          <Text style={styles.buttonText}>Send</Text>
+          <Text style={styles.bt}>Send</Text>
         </TouchableOpacity>
         {this.state.notification ?
           this.renderNotification()
@@ -162,4 +164,23 @@ export default class sendpushmessage extends React.Component {
   }
 
 const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    textAlignVertical : 'center'
+  },
+  bt:{
+    backgroundColor: 'navy',
+    borderColor: 'white',
+    borderWidth: 1,
+    borderRadius: 12,
+    color: 'white',
+    fontSize: 15,
+    fontWeight: "800",
+    overflow: 'hidden',
+    padding: 12,
+    textAlign:'center',
+    
+   }
 });

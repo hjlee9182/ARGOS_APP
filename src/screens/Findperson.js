@@ -55,25 +55,32 @@ class Findperson extends React.Component{
 
   render() {
     return (
-    <>
-        <Text style = {{fontSize:48}}>Findperson</Text>
-        <TextInput
-            placeholder="Enter User Password"
+    < View style={{margin:30}}>
+       
+        <TextInput 
+            placeholder="Enter User Name"
             onChangeText={text => this.setState({text})}
             underlineColorAndroid='transparent'
-            style={styles.TextInputStyleClass}
+            style={{
+              marginTop : 30,
+              marginBottom : 40
+            }}
         />
           <Text style = {{fontSize:24}}>name : { this.state.name }</Text>
         <Text style = {{fontSize:24}}>id : { this.state.id }</Text>
         <Text style = {{fontSize:24}}>email : { this.state.email }</Text>
         <Text style = {{fontSize:24}}>Join_us : { this.state.join }</Text>
         <Text style = {{fontSize:24}}>admission : { this.state.admission }</Text>
-        <Button title="send" onPress={
-        this.abc }/>
-      
         
-        <Text style={{fontSize:30}}>{}</Text>
-    </>
+        <TouchableOpacity 
+        onPress={
+          this.abc }>
+          <Text style={styles.bt}>Find!</Text>
+        </TouchableOpacity>
+        {/* <Button title="send" onPress={
+        this.abc }/> */}
+    
+    </ View>
       
     );
   }
@@ -87,8 +94,26 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
       alignItems: 'center',
       flexDirection: 'row',
-  }
+  },
+  bt:{
+    backgroundColor: 'navy',
+    borderColor: 'white',
+    borderWidth: 1,
+    borderRadius: 12,
+    color: 'white',
+    fontSize: 15,
+    fontWeight: "800",
+    overflow: 'hidden',
+    padding: 12,
+    textAlign:'center',
+    
+   }
 });
-
+Findperson.navigationOptions = ({navigation}) =>{
+  return {
+      
+      title: "회원 찾기"
+  };
+};
 
 export default Findperson;

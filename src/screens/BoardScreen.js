@@ -73,7 +73,7 @@ button_container: {
     item_left: {
       justifyContent: 'center',
       alignItems: 'center',
-      marginLeft:30,
+      marginLeft:20,
       width:150,
       height: 150,
           backgroundColor:"navy",
@@ -89,7 +89,7 @@ button_container: {
       item_right: {
         justifyContent: 'center',
         alignItems: 'center',
-        marginRight:30,
+        marginRight:20,
         width:150,height: 150,
             backgroundColor:"#99CCFF",
           borderRadius: 10,

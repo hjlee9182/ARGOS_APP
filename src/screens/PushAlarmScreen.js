@@ -3,6 +3,7 @@ import {View,StyleSheet,Text,Alert,FlatList} from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import {EvilIcons} from '@expo/vector-icons'
 import { AsyncStorage } from 'react-native';
+import { Constants } from 'expo'
 
 
 class admincheck extends React.Component{
@@ -94,8 +95,8 @@ export default class PushAlarmScreen extends React.Component{
 
   renderRow = ({item}) => {
     return(
-      <View>
-        <Text> {item.who} {item.message}  {item.time} </Text>
+      <View style={styles.item}>
+        <Text style={styles.text}> {item.who} {item.message}  {item.time} </Text>
       </View>
     )
   }
@@ -104,8 +105,7 @@ export default class PushAlarmScreen extends React.Component{
    //this.getmsg();
     return(
       <>
-      <Text style = {{fontSize:48}}>PushAlarmScreen</Text>
-      <FlatList
+      <FlatList style={styles.container}
       data={ this.state.data }
       renderItem={this.renderRow}
       keyExtractor={(item,index)=>index.toString()}
@@ -131,3 +131,22 @@ PushAlarmScreen.navigationOptions = ({navigation}) =>{
 
 
 
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+    marginTop: 10,
+  },
+  item: {
+    flex: 1,
+    height: 50,
+
+    borderWidth: 1,
+    borderColor: 'black',
+  },
+  text: {
+    fontWeight: 'bold',
+    fontSize: 20,
+   
+  }
+});

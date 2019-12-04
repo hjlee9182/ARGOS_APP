@@ -1,7 +1,6 @@
 import React from 'react';
 
 import {View,StyleSheet,Text,Button,Alert,Image} from 'react-native';
-import {SafeAreaView} from 'react-navigation';
 import { AsyncStorage } from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import {EvilIcons} from '@expo/vector-icons'
@@ -61,10 +60,12 @@ class PersonalInformation extends React.Component{
 
 
   render() {
-    return (<>
-      <View stlye={    
+    return (<View style={{margin:30}}>
+      <View style={    
       {justifyContent: 'center',
       alignItems: 'center',
+      marginBottom: 30
+  
       }}>
       <Image 
       style = {styles.image_style}
@@ -75,10 +76,17 @@ class PersonalInformation extends React.Component{
       <Text style = {{fontSize:24}}>email : { this.state.email }</Text>
       <Text style = {{fontSize:24}}>Join_us : { this.state.join }</Text>
       <Text style = {{fontSize:24}}>admission : { this.state.admission }</Text>
-      <Button title="logout" onPress={ async ()=>{
-        await  AsyncStorage.removeItem('userToken');
-        this.props.navigation.navigate('Signin')
-      }}/></>
+      
+      <TouchableOpacity 
+      style={{margin:30}}
+        onPress={ async ()=>{
+          await  AsyncStorage.removeItem('userToken');
+          this.props.navigation.navigate('Signin')
+        }}>
+          <Text style={styles.bt}>Logout!</Text>
+        </TouchableOpacity>
+        
+      </View>
       
     );
   }
@@ -92,7 +100,22 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
       alignItems: 'center',
       flexDirection: 'row',
-  }
+      alignItems: 'center'
+
+  },
+  bt:{
+    backgroundColor: 'navy',
+    borderColor: 'white',
+    borderWidth: 1,
+    borderRadius: 12,
+    color: 'white',
+    fontSize: 15,
+    fontWeight: "800",
+    overflow: 'hidden',
+    padding: 12,
+    textAlign:'center',
+    
+   }
 });
 
 PersonalInformation.navigationOptions = ({navigation}) =>{

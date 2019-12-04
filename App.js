@@ -20,6 +20,7 @@ import freeboard from './src/screens/boarder/freeboard'
 import findperson from './src/screens/Findperson'
 import sendpushmessage from './src/screens/sendpushmessage'
 import createfree from './src/screens/boarder/createfree'
+
 const getTabBarIcon = (navigation, focused, tintColor) => {
   const { routeName } = navigation.state;
   let IconComponent = Ionicons;
