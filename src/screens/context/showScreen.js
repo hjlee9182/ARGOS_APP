@@ -17,12 +17,6 @@ const ShowScreen = ({navigation}) =>{
 ShowScreen.navigationOptions = ({navigation}) =>{
     console.log(navigation)
     return {
-        // headerRight: (
-        // <TouchableOpacity 
-        // onPress={()=>
-        // navigation.navigate('Edit',{id:navigation.getParam('id')})}>
-        //     <EvilIcons name="pencil" size={35}/>
-        // </TouchableOpacity>),
         title: navigation.state.params.navigationOptions.title
     };
 };
