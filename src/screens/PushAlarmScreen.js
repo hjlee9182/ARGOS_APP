@@ -12,19 +12,18 @@ class admincheck extends React.Component{
         text: '',
         email: ''
       };
-      this.a(navigation);
+      this.checker(navigation);
       }
   
-      a = async (navigation) =>{
-      const b = await AsyncStorage.getItem('userToken');
-      this.state = { text : b,
+      checker = async (navigation) =>{
+      const user = await AsyncStorage.getItem('userToken');
+      this.state = { text : user,
                     email : ''
                 };
-      this.abc(navigation);
+      this.fetchAndMatch(navigation);
       }
   
-      abc(navigation){
-        const { text }  = this.state.text ;
+      fetchAndMatch(navigation){
         fetch('http://112.166.141.161/react_admin_check.php', {
   
           method: 'POST',
@@ -37,8 +36,8 @@ class admincheck extends React.Component{
          })
        }).then((response) => response.json())
              .then((responseJson) => {
-                if(responseJson === 'Data Matched')
-                {   this.props.navigate('sendpushmessage');
+                if(responseJson === 'Data Matched'){   
+                  this.props.navigate('sendpushmessage');
                 }
                 else{
                   Alert.alert(responseJson);
@@ -58,7 +57,6 @@ export default class PushAlarmScreen extends React.Component{
       notification: null,
       messageText: '',
       data: '',
-      abcd: '',
       isloding: true
     };
     this.getmsg();
@@ -66,7 +64,6 @@ export default class PushAlarmScreen extends React.Component{
     }
 
   getmsg(){
-    console.log("hh");
     fetch('http://112.166.141.161/react_pushget.php', {
 
       method: 'POST',
@@ -118,7 +115,7 @@ PushAlarmScreen.navigationOptions = ({navigation}) =>{
         headerRight: (
         <TouchableOpacity 
         onPress={()=>
-            b = new admincheck(navigation)}>
+            admincheck_ = new admincheck(navigation)}>
             <EvilIcons name="bell" size={35}/>
         </TouchableOpacity>),
         title: "푸시 알람"
