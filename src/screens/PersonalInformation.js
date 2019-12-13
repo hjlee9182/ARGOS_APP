@@ -1,10 +1,9 @@
 import React from 'react';
 
-import {View,StyleSheet,Text,Button,Alert,Image} from 'react-native';
+import { View,StyleSheet, Text, Image } from 'react-native';
 import { AsyncStorage } from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
-import {EvilIcons} from '@expo/vector-icons'
-import { stopLocationUpdatesAsync } from 'expo-location';
+import { EvilIcons } from '@expo/vector-icons'
 
 
 class PersonalInformation extends React.Component{

@@ -1,6 +1,6 @@
 import React from 'react';
-import {View,StyleSheet,Text,TouchableOpacity} from 'react-native';
-import { Button } from 'react-native-elements';
+import { View, StyleSheet, Text, TouchableOpacity } from 'react-native';
+
 const BoardScreen = ({navigation}) =>{
     return (
       <View style={styles.container}>

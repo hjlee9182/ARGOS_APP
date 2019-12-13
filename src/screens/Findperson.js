@@ -1,12 +1,6 @@
 import React from 'react';
-
-import {View,StyleSheet,Text,Button,Alert,Image,TextInput} from 'react-native';
-import {SafeAreaView} from 'react-navigation';
-import { AsyncStorage } from 'react-native';
+import { View, StyleSheet, Text, TextInput } from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
-import {EvilIcons} from '@expo/vector-icons'
-import { stopLocationUpdatesAsync } from 'expo-location';
-
 
 class Findperson extends React.Component{
 

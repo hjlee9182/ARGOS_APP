@@ -1,5 +1,5 @@
 import React from 'react';
-import {View,StyleSheet,Text,Button, ActivityIndicator, StatusBar } from 'react-native';
+import { View, ActivityIndicator, StatusBar } from 'react-native';
 import { AsyncStorage } from 'react-native';
 
 class AuthLoadingScreen extends React.Component {

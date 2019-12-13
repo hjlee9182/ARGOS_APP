@@ -1,11 +1,9 @@
 import React from 'react';
-import {View,StyleSheet,Text,TextInput, Alert} from 'react-native';
+import { View, StyleSheet, Text, TextInput, Alert } from 'react-native';
 import { TouchableOpacity, FlatList } from 'react-native-gesture-handler';
 import { AsyncStorage } from 'react-native';
-import {EvilIcons} from '@expo/vector-icons'
 import { Notifications } from 'expo';
 import * as Permissions from 'expo-permissions';
-import PushAlarmScreen from './PushAlarmScreen';
 
 class msg extends React.Component{
 

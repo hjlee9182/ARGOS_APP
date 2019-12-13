@@ -1,7 +1,7 @@
-import React, { useContext ,useEffect} from 'react';
-import {View,StyleSheet,Text,FlatList,Button} from 'react-native';
-import {Context} from '../context/BlogContext'
-import {Feather } from '@expo/vector-icons'
+import React, { useContext, useEffect } from 'react';
+import { View, StyleSheet, Text, FlatList } from 'react-native';
+import { Context } from '../context/BlogContext'
+import { Feather } from '@expo/vector-icons'
 import { TouchableOpacity } from 'react-native-gesture-handler';
 
 const freeboard = ({navigation}) =>{

@@ -1,8 +1,7 @@
 import * as React from 'react';
-import {View,StyleSheet,Text,Button, Input,TextInput, Alert,TouchableOpacity} from 'react-native';
+import { View, StyleSheet, Text, TextInput, Alert, TouchableOpacity } from 'react-native';
 import { AsyncStorage } from 'react-native';
 import Spacer from '../components/Spacer';
-import NavLink from '../components/NavLink';
 
 const BLUE = "#428aF8";
 const LIGHT_GRAY = "#D3D3D3";

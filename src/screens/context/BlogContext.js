@@ -1,5 +1,4 @@
-import React,{useReducer} from 'react'
-import {Text} from 'react-native';
+import React from 'react'
 import createDataContext from './createDataContext';
 import jsonServer from '../../api/jsonServer'
 

@@ -1,6 +1,6 @@
-import React,{useContext, useState} from 'react';
-import {StyleSheet,} from 'react-native'
-import {Context} from '../context/BlogContext'
+import React, { useContext } from 'react';
+import { StyleSheet } from 'react-native'
+import { Context } from '../context/BlogContext'
 import BlogPostForm from '../context/BlogPostForm'
 const CreateScreen = ({navigation}) =>{
     

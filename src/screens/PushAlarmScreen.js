@@ -1,10 +1,8 @@
 import React from 'react';
-import {View,StyleSheet,Text,Alert,FlatList} from 'react-native';
+import { View, StyleSheet, Text, Alert, FlatList } from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
-import {EvilIcons} from '@expo/vector-icons'
+import { EvilIcons } from '@expo/vector-icons'
 import { AsyncStorage } from 'react-native';
-import { Constants } from 'expo'
-
 
 class admincheck extends React.Component{
 
