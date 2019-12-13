@@ -3,8 +3,6 @@ import { View, StyleSheet, Text, TextInput, Alert, TouchableOpacity } from 'reac
 import { AsyncStorage } from 'react-native';
 import Spacer from '../components/Spacer';
 
-const BLUE = "#428aF8";
-const LIGHT_GRAY = "#D3D3D3";
 class LoginActiviti extends React.Component {
 
   constructor(props) {

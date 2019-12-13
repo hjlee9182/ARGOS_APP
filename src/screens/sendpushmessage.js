@@ -23,8 +23,6 @@ class msg extends React.Component{
         this.savemsg(messageText);
     }
     savemsg = async (messageText) =>{
-      const { who }  = this.state.who ;
-      const { message  } = messageText;
       console.log(this.state.who);
       console.log(messageText);
       fetch('http://112.166.141.161/react_pushsave.php', {
