@@ -33,7 +33,6 @@ class Findperson extends React.Component{
      }).then((response) => response.json())
            .then((responseJson) => {
              
-              console.log(responseJson);
               this.setState({ name : responseJson[0] });
               this.setState({ id : responseJson[1] });
               this.setState({ email : responseJson[2] });

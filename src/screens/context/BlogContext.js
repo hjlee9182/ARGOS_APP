@@ -5,7 +5,6 @@ import jsonServer from '../../api/jsonServer'
 const BlogContext = React.createContext();
 
 const blogReducer = (state,action)=>{
-    console.log(action.type)
     switch (action.type){
         case 'delete_freepost':
             return state.filter((blogPost)=>blogPost.id!==action.payload);

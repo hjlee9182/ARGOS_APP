@@ -30,7 +30,6 @@ class PersonalInformation extends React.Component{
     }
 
     abc = () =>{
-      console.log("hi");
       const { text }  = this.state.text ;
       fetch('http://112.166.141.161/react_myinfo.php', {
 
@@ -45,7 +44,6 @@ class PersonalInformation extends React.Component{
      }).then((response) => response.json())
            .then((responseJson) => {
              // If server response message same as Data Matched
-              console.log(responseJson);
               this.setState({ name : responseJson[0] });
               this.setState({ id : responseJson[1] });
               this.setState({ email : responseJson[2] });

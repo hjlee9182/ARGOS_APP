@@ -15,7 +15,6 @@ const ShowScreen = ({navigation}) =>{
 }
 
 ShowScreen.navigationOptions = ({navigation}) =>{
-    console.log(navigation)
     return {
         title: navigation.state.params.navigationOptions.title
     };
