@@ -1,12 +1,6 @@
 import React from 'react';
-
-import {View,StyleSheet,Text,Button,Alert,Image,TextInput} from 'react-native';
-import {SafeAreaView} from 'react-navigation';
-import { AsyncStorage } from 'react-native';
+import { View, StyleSheet, Text, TextInput } from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
-import {EvilIcons} from '@expo/vector-icons'
-import { stopLocationUpdatesAsync } from 'expo-location';
-
 
 class Findperson extends React.Component{
 
@@ -39,7 +33,6 @@ class Findperson extends React.Component{
      }).then((response) => response.json())
            .then((responseJson) => {
              
-              console.log(responseJson);
               this.setState({ name : responseJson[0] });
               this.setState({ id : responseJson[1] });
               this.setState({ email : responseJson[2] });
@@ -77,8 +70,6 @@ class Findperson extends React.Component{
           this.abc }>
           <Text style={styles.bt}>Find!</Text>
         </TouchableOpacity>
-        {/* <Button title="send" onPress={
-        this.abc }/> */}
     
     </ View>
       

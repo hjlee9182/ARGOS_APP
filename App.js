@@ -1,5 +1,4 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
 import PersonalInformation from './src/screens/PersonalInformation';
 import SigninScreen from './src/screens/SigninScreen';
 import SignupScreen from './src/screens/SignupScreen';
@@ -79,50 +78,6 @@ const switchNavigator = createSwitchNavigator(
   )
 });
 
-/*
-const switchNavigator = createSwitchNavigator(
-  {
-    AuthLoading: AuthLoadingScreen,
-  loginFlow : createStackNavigator({
-    Signin: SigninScreen,
-    Signup:SignupScreen}),
-  mainFlow: createBottomTabNavigator({
-    게시판: createStackNavigator({
-      BoardScreen: BoardScreen,
-      TrackDetail : TrackDetailScreen,
-        Show : ShowScreen,
-        Create :CreateScreen,
-        Edit:EditScreen
-    },
-    {
-      BoardScreen: BoardScreen,
-      freeboard : freeboard
-    }),
-    세미나 : SeminarScreen,
-    마이페이지:PersonalInformation,
-    푸시알람 : PushAlarmScreen
-  },
-  {
-    defaultNavigationOptions: ({ navigation }) => ({
-      tabBarIcon: ({ focused, tintColor }) =>
-        getTabBarIcon(navigation, focused, tintColor),})
-  },
-  {
-   initialRouteName: 'AuthLoading',
- },
-    {
-      test: createStackNavigator({
-        TrackDetail : TrackDetailScreen,
-        Show : ShowScreen,
-        Create :CreateScreen,
-        Edit:EditScreen
-        
-    })}
-
-  )
-});
-*/
-//export default createAppContainer(switchNavigator);
 const App = createAppContainer(switchNavigator);
 export default()=>{
   return (

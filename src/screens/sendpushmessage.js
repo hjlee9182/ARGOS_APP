@@ -1,11 +1,9 @@
 import React from 'react';
-import {View,StyleSheet,Text,TextInput, Alert} from 'react-native';
+import { View, StyleSheet, Text, TextInput, Alert } from 'react-native';
 import { TouchableOpacity, FlatList } from 'react-native-gesture-handler';
 import { AsyncStorage } from 'react-native';
-import {EvilIcons} from '@expo/vector-icons'
 import { Notifications } from 'expo';
 import * as Permissions from 'expo-permissions';
-import PushAlarmScreen from './PushAlarmScreen';
 
 class msg extends React.Component{
 
@@ -25,10 +23,6 @@ class msg extends React.Component{
         this.savemsg(messageText);
     }
     savemsg = async (messageText) =>{
-      const { who }  = this.state.who ;
-      const { message  } = messageText;
-      console.log(this.state.who);
-      console.log(messageText);
       fetch('http://112.166.141.161/react_pushsave.php', {
 
         method: 'POST',

@@ -1,10 +1,9 @@
 import React from 'react';
 
-import {View,StyleSheet,Text,Button,Alert,Image} from 'react-native';
+import { View,StyleSheet, Text, Image } from 'react-native';
 import { AsyncStorage } from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
-import {EvilIcons} from '@expo/vector-icons'
-import { stopLocationUpdatesAsync } from 'expo-location';
+import { EvilIcons } from '@expo/vector-icons'
 
 
 class PersonalInformation extends React.Component{
@@ -31,7 +30,6 @@ class PersonalInformation extends React.Component{
     }
 
     abc = () =>{
-      console.log("hi");
       const { text }  = this.state.text ;
       fetch('http://112.166.141.161/react_myinfo.php', {
 
@@ -46,7 +44,6 @@ class PersonalInformation extends React.Component{
      }).then((response) => response.json())
            .then((responseJson) => {
              // If server response message same as Data Matched
-              console.log(responseJson);
               this.setState({ name : responseJson[0] });
               this.setState({ id : responseJson[1] });
               this.setState({ email : responseJson[2] });

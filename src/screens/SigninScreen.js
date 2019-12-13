@@ -1,11 +1,8 @@
 import * as React from 'react';
-import {View,StyleSheet,Text,Button, Input,TextInput, Alert,TouchableOpacity} from 'react-native';
+import { View, StyleSheet, Text, TextInput, Alert, TouchableOpacity } from 'react-native';
 import { AsyncStorage } from 'react-native';
 import Spacer from '../components/Spacer';
-import NavLink from '../components/NavLink';
 
-const BLUE = "#428aF8";
-const LIGHT_GRAY = "#D3D3D3";
 class LoginActiviti extends React.Component {
 
   constructor(props) {
@@ -85,9 +82,6 @@ class LoginActiviti extends React.Component {
         </TouchableOpacity>
       </View>
     </Spacer>
-     {/* <Button
-     title ="Go to Signup"
-     onPress={()=>this.props.navigation.navigate('Signup')}></Button> */}
     
      </View>
    );
