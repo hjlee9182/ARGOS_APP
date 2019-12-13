@@ -77,8 +77,6 @@ class Findperson extends React.Component{
           this.abc }>
           <Text style={styles.bt}>Find!</Text>
         </TouchableOpacity>
-        {/* <Button title="send" onPress={
-        this.abc }/> */}
     
     </ View>
       

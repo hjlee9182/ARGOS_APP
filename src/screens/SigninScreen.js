@@ -85,9 +85,6 @@ class LoginActiviti extends React.Component {
         </TouchableOpacity>
       </View>
     </Spacer>
-     {/* <Button
-     title ="Go to Signup"
-     onPress={()=>this.props.navigation.navigate('Signup')}></Button> */}
     
      </View>
    );

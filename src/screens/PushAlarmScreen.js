@@ -50,8 +50,7 @@ class admincheck extends React.Component{
              });
     }
 
-  }
-
+}
 
 export default class PushAlarmScreen extends React.Component{ 
 
@@ -102,7 +101,6 @@ export default class PushAlarmScreen extends React.Component{
   }
 
   render(){
-   //this.getmsg();
     return(
       <>
       <FlatList style={styles.container}
